@@ -1,4 +1,4 @@
-[{
+data = [{
   "position": "1",
   "team": "Manchester United"
 }, {
@@ -74,3 +74,24 @@
   "position": "5",
   "team": "3"
 }]
+
+function dataAppender() {
+  for (var i = 0; i < data.length; i++) {
+    data[i]
+    $('#here').append('<li>Pos: ' + data[i].position + '  ' + data[i].team + '</li>')
+  }
+}
+
+
+
+
+$(document).ready(function() {
+  // alert('boom')
+  localStorage.setItem('data', JSON.stringify(data))
+  console.log(data[2].team);
+  dataAppender()
+
+
+
+
+});
